@@ -1,3 +1,11 @@
+html, body, div, span, section, ul, li, form {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+
 body {
 	font-family: "Montserrat";
 }
@@ -8,9 +16,29 @@ ul {
 	list-style: none;
 }
 
+label {
+	margin: 5px;
+	display: block;
+}
+
+input {
+	margin: 5px;
+	display: block;
+}
+
+.inline-label,
+.inline-input {
+	display: inline;
+}
+
+#container {
+	margin: auto;
+	width: 1000px;
+}
+
 #map-container {
 /*	background: url("<%= asset_path('loader.gif') %>") no-repeat center;*/
-	margin-right: 20px;
+	margin: 0 20px;
 	float: left;
 	border: 1px solid black;
 	width: 600px;
@@ -24,9 +52,17 @@ ul {
 }
 
 #shows {
+	border-top: 1px solid black;
+	border-top: 1px solid black;
+	font-size: 12px;
 	float: left;
 	padding: 0;
-	width: 500px;
+	width: 200px;
+}
+
+#add-a-show-form {
+	float: left;
+	width: 200px;
 }
 
 
