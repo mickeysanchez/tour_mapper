@@ -3,7 +3,9 @@
 <head>
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.1/angular.min.js"></script>
-<script src="mapper.js"></script>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
 <link href="sheet.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -22,15 +24,34 @@
 	<hr>
 	<h1>{{bandName}}'s Shows:</h1>
 	
-    <ul>
-	   <li ng-repeat="show in shows">
-	   	 <ul>
-		   <li>{{ show["datetime_local"] | date }} - {{ show["venue"]["name"] }} - {{ show["venue"]["display_location"]}}</li>
-		 </ul>
-		 <hr>
-	   </li>
-   </ul>
+	<section id="map-container">
+		<div id='map'>
+		</div>
+	</section> 
+	
+	<section id="shows">
+	    <ul>
+		   <li ng-repeat="show in shows">
+		   	 <ul>
+			   <li>{{ show["datetime_local"] | date }} - 
+				   {{ show["venue"]["name"] }} - 
+				   {{ show["venue"]["display_location"]}}
+			   </li>
+			 </ul>
+			 <hr>
+		   </li>
+	   </ul>
+	</section> 
+	
 </div>
-
 </body>
+
+<script src="mapper.js"></script>
+
 </html>
+
+
+
+
+
+
