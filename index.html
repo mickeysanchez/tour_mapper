@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.1/angular.min.js"></script>
+<script src="mapper.js"></script>
+<link href="sheet.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div ng-controller="ShowsCtrl">
+	
+	<h1> Find a band's shows! (via the SeatGeek API)</h1>
+	
+	<form ng-submit="grabShows()">
+		<label>Band Name:</label>
+		<input type="text" ng-model="bandName" placeholder="Enter a name here">
+		
+		<input type="submit" value="Grab Shows">
+	</form>
+	
+	<hr>
+	<h1>{{bandName}}'s Shows:</h1>
+	
+    <ul>
+	   <li ng-repeat="show in shows">
+	   	 <ul>
+		   <li>{{ show["datetime_local"] | date }} - {{ show["venue"]["name"] }} - {{ show["venue"]["display_location"]}}</li>
+		 </ul>
+		 <hr>
+	   </li>
+   </ul>
+</div>
+
+</body>
+</html>
