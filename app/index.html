@@ -3,17 +3,29 @@
 <html ng-app="tourMapper">
 
 <head>
+	<!-- Font -->
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	
+	<!-- Mapbox libraries -->
 	<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js'></script>
 	<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
+	
+	<!-- Stylez -->
 	<link href="css/app.css" rel="stylesheet" type="text/css">
 </head>
 
+<!-- Main View -->
 <ng-view></ng-view>
 
+<!-- Angular Core -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular-route.js"></script>
+
+<!-- App Libraries -->
 <script src="app.js"></script>
+<script src="js/controllers/shows_controller.js"></script>
+<script src="js/factories/show_factory.js"></script>
+
 </html>
 
 
