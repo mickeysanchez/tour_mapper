@@ -4,7 +4,6 @@
 	* saves in db - rails?
 
 * refactor / angular best practices
-* refactor css => scss
 
 
 #Schema

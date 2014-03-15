@@ -1,15 +1,64 @@
 header {
+	width: 1500px;
+	margin: auto;
+	padding: 10px 0;
 	border-bottom: 1px solid black;
+	
+	span {
+		margin-left: 10px;
+	}
 	
 	form {
 		display: inline;
 		
 		label {
 			display: inline;
+			font-size: 25px;
+			font-weight: bold;
 		}
 		
 		input {
-			display: inline;
+			margin-left: 10px;
 		}
+		
+		input[type=text] {
+			display: inline;
+			border-bottom: 1px solid black;
+			text-align: center;
+			font-size: 25px;
+		}
+		
+		input[type=text]:focus {
+			outline: 0;
+		};
+		
+		input[type=submit] {
+			position: relative;
+			padding: 0 10px;
+			border: 1px solid black;
+			font-size: 25px;
+			box-shadow: 3px 3px 3px #888888;
+		    cursor: pointer;
+		}
+		
+		input[type="submit"]:hover {
+			background: lightyellow;
+		}
+
+		input[type="submit"]:active {
+			top: 2px;
+			left: 2px;
+		}
+	}
+	
+	button {
+		float: right;
+		padding: 0 10px;
+		border: 1px solid black;
+		background: $red;
+		color: white;
+		font-weight: bold;
+		font-size: 25px;
+	    cursor: pointer;
 	}
 }

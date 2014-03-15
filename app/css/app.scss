@@ -8,7 +8,7 @@ $red: #6b2607;
 @import 'header';
 @import 'shows';
 @import 'map';
-//@import 'forms';
+@import 'form';
 
 body {
 	font-family: $font;
@@ -16,6 +16,7 @@ body {
 
 #logo {
 	float: right;
+	margin-bottom: 10px;
 }
 
 #container {
@@ -24,7 +25,9 @@ body {
 }
 
 #band-name-header {
-	height: 60px;
+	height: 50px;
+	margin-bottom: 10px;
+	padding: 10px;
 	text-align: center;
 }
 

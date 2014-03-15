@@ -1,4 +1,4 @@
-html, body, main, header,
+html, body, main, header, button,
 div, span, section, ul, li, form,
 h1, h2, h3, h4, h5, h6, input, label {
   margin: 0;
@@ -37,24 +37,62 @@ a:active {
   display: block; }
 
 header {
+  width: 1500px;
+  margin: auto;
+  padding: 10px 0;
   border-bottom: 1px solid black; }
+  header span {
+    margin-left: 10px; }
   header form {
     display: inline; }
     header form label {
-      display: inline; }
+      display: inline;
+      font-size: 25px;
+      font-weight: bold; }
     header form input {
-      display: inline; }
+      margin-left: 10px; }
+    header form input[type=text] {
+      display: inline;
+      border-bottom: 1px solid black;
+      text-align: center;
+      font-size: 25px; }
+    header form input[type=text]:focus {
+      outline: 0; }
+    header form input[type=submit] {
+      position: relative;
+      padding: 0 10px;
+      border: 1px solid black;
+      font-size: 25px;
+      box-shadow: 3px 3px 3px #888888;
+      cursor: pointer; }
+    header form input[type="submit"]:hover {
+      background: lightyellow; }
+    header form input[type="submit"]:active {
+      top: 2px;
+      left: 2px; }
+  header button {
+    float: right;
+    padding: 0 10px;
+    border: 1px solid black;
+    background: #6b2607;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    cursor: pointer; }
 
 #shows {
-  border-top: 1px solid black;
-  border-top: 1px solid black;
-  font-size: 12px;
+  font-size: 14px;
   float: left;
   padding: 0;
   width: 350px; }
+  #shows h2 {
+    border-bottom: 1px solid black; }
+  #shows li {
+    padding: 10px 0;
+    border-bottom: 1px solid black; }
 
 #map-container {
-  background: url("../img/loader.gif") no-repeat center;
+  background: url("../img/spinner.gif") no-repeat center;
   margin: 0 20px;
   float: left;
   border: 1px solid black;
@@ -66,18 +104,59 @@ header {
   height: 100%;
   z-index: 0; }
 
+#add-show-form {
+  width: 300px;
+  float: right; }
+  #add-show-form h2 {
+    margin-bottom: 10px;
+    border-bottom: 1px solid black; }
+  #add-show-form label {
+    display: block;
+    margin: 2px;
+    font-weight: bold; }
+  #add-show-form input[type="text"],
+  #add-show-form input[type="date"] {
+    display: block;
+    width: 279px;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 14px; }
+  #add-show-form input[type="text"]:hover,
+  #add-show-form input[type="date"]:hover {
+    border: 1px solid green;
+    box-shadow: 1px 1px 1px #888888; }
+  #add-show-form input[type="submit"] {
+    display: inline-block;
+    position: relative;
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid black;
+    -webkit-appearance: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    box-shadow: 3px 3px 3px #888888;
+    cursor: pointer; }
+  #add-show-form input[type="submit"]:hover {
+    background: lightyellow; }
+  #add-show-form input[type="submit"]:active {
+    top: 2px;
+    left: 2px; }
+
 body {
   font-family: "Montserrat", sans-serif; }
 
 #logo {
-  float: right; }
+  float: right;
+  margin-bottom: 10px; }
 
 #container {
   margin: auto;
   width: 1500px; }
 
 #band-name-header {
-  height: 60px;
+  height: 50px;
+  margin-bottom: 10px;
+  padding: 10px;
   text-align: center; }
 
 h1 {

@@ -1,8 +1,15 @@
 #shows {
-	border-top: 1px solid black;
-	border-top: 1px solid black;
-	font-size: 12px;
+	font-size: 14px;
 	float: left;
 	padding: 0;
 	width: 350px;
+	
+	h2 {
+		border-bottom: 1px solid black;
+	}
+	
+	li {
+		padding: 10px 0;
+		border-bottom: 1px solid black;
+	}
 }

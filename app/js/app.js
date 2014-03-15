@@ -9,9 +9,17 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter) {
 		$http({method: "GET", url: "https://api.seatgeek.com/2/events?type=concert&q=" + $scope.bandName})
 			.success(function (data) {
 				// clear out any exisitng shows
-				$scope.shows = []
-				$scope.shows = $scope.showObjectsFromGrab(data);
-				$scope.addMapMarkers();
+				var confirmed = true;
+				
+				if ($scope.shows.length > 0) {
+					var confirmed = confirm("This will replace the shows you alread have. Is that OK?");
+				};
+				
+				if (confirmed) {
+					$scope.shows = [];
+					$scope.shows = $scope.showObjectsFromGrab(data);
+					$scope.addMapMarkers();
+				};
 		})
 	};
 	
@@ -19,6 +27,7 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter) {
 	$scope.showObjectsFromGrab = function (data) {
 		return data["events"].map(function (show) {	
 			return  {
+						"ticket_url" : show["url"],
 						"datetime_local": new Date (show["datetime_local"]),
 						"venue": {
 							"name": show["venue"]["name"],
@@ -59,6 +68,7 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter) {
 			console.log(data.results[0]["geometry"]["location"])
 			
 			var showObj = {
+				"ticket_url": show.ticket_url,
 				"datetime_local": new Date (show.datetime_local),
 				"venue": {
 					"name": show.venue.name,
@@ -83,6 +93,12 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter) {
 			$scope.shows.push(angular.copy(showObj));
 			$scope.addMapMarkers();
 		});
+	};
+	
+	$scope.getEmbed = function () {
+		console.log("embed");
+		$body = angular.element( document.querySelector( 'body' ) );
+		$body.prepend( JSON.stringify($scope.shows) );
 	};
  
 });
