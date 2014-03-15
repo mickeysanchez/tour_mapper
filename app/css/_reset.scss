@@ -1,0 +1,19 @@
+html, body, main, header, 
+div, span, section, ul, li, form,
+h1, h2, h3, h4, h5, h6, input, label {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+ul {
+	list-style: none;
+}
+
+a:link {color: $red; text-decoration: none;}
+a:visited {color: $red;}
+a:hover {color: black; text-decoration : none;}
+a:active{color: black; text-decoration : none; }

@@ -74,7 +74,7 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter) {
 		        },
 		        "properties": {
 		            "title": $filter('date')(show.datetime_local),
-		            // "description": "<a href='" + show["url"] + "'> Tickets </a>",
+		            "description": "<a href='" + show.ticket_url + "'> Tickets </a>",
 		            "marker-size": "small",
 		            "marker-color": "#070"
 		        }
@@ -89,7 +89,7 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter) {
 
 // load an empty map on page load
 tourMapper.map = L.mapbox.map('map', 'examples.map-9ijuk24y')
-    	   .setView([20, 0], 1);
+    	   .setView([30, 10], 2);
 		   
 tourMapper.featureLayer = L.mapbox.featureLayer()
 

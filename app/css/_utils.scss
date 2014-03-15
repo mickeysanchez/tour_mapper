@@ -1,0 +1,11 @@
+.clear-after:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.clear-before:before {
+	content: "";
+	clear: both;
+	display: block;
+};

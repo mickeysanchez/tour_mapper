@@ -1,3 +1,12 @@
+#TODO
+* finish layout
+* save / share on twitter
+	* saves in db - rails?
+
+* refactor / angular best practices
+* refactor css => scss
+
+
 #Schema
 
 users
