@@ -50,11 +50,39 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter) {
 	
 	$scope.addShow = function(show) {
 		show.datetime_local = new Date (show.datetime_local);
-		$scope.shows.push(angular.copy(show));
+		$scope.showObjectFromForm(show);
 	};
 	
-	$scope.showObjectFromForm = function () {
-		
+	$scope.showObjectFromForm = function(show) {
+		$http({method: "GET", url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + show.address +  "," + show.city + "," + show.state + "&sensor=false" })
+		.success(function (data) {
+			console.log(data.results[0]["geometry"]["location"])
+			
+			var showObj = {
+				"datetime_local": new Date (show.datetime_local),
+				"venue": {
+					"name": show.venue.name,
+					"display_location": show.city + ", " + show.state 
+				},
+		        "type": "Feature",
+		        "geometry": {
+		            "type": "Point",
+		            "coordinates": [
+		                data.results[0]["geometry"]["location"]["lng"],
+		                data.results[0]["geometry"]["location"]["lat"]
+		            ]
+		        },
+		        "properties": {
+		            "title": $filter('date')(show.datetime_local),
+		            // "description": "<a href='" + show["url"] + "'> Tickets </a>",
+		            "marker-size": "small",
+		            "marker-color": "#070"
+		        }
+			};
+			
+			$scope.shows.push(angular.copy(showObj));
+			$scope.addMapMarkers();
+		});
 	};
  
 });
