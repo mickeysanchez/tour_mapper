@@ -72,5 +72,9 @@ tourMapper.factory('showFactory', function($http, $filter) {
 		};
 	};
 	
+	factory.generateEmbed = function (shows) {
+		return "&lt;meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' /&gt; &lt;script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js'&gt;&lt;/script&gt; &lt;link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' /&gt; &lt;script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'&gt;&lt;/script&gt; &lt;style&gt; #map { border: 1px solid black; width: 900px; height: 500px; } &lt;/style&gt; &lt;div id='map'&gt;&lt;/div&gt; &lt;script&gt; var map = L.mapbox.map('map', 'examples.map-9ijuk24y').setView([30, 10], 2); map.scrollWheelZoom.disable(); var featureLayer = L.mapbox.featureLayer().setGeoJSON(" + JSON.stringify(shows) + "); map.fitBounds(featureLayer.getBounds()); featureLayer.addTo(map); &lt;/script&gt;"
+	};
+	
 	return factory;
 });
