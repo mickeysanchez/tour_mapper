@@ -14,6 +14,10 @@ Start a server:
 	
 
 To run tests:
+	for jasmine unit tests:
+	open SpecRunner.html in a browser
+	
+	for protractor tests:
 	start standalone selenium server:
 	webdriver-manager start (may need sudo)
 	(you can install using: webdriver-manager update --standalone)
