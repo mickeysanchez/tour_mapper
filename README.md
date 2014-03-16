@@ -18,6 +18,8 @@ To run tests:
 	open SpecRunner.html in a browser
 	
 	for protractor tests:
+	make sure app server is running
+	
 	start standalone selenium server:
 	webdriver-manager start (may need sudo)
 	(you can install using: webdriver-manager update --standalone)
