@@ -5,6 +5,7 @@
 Towards a single page, non-sign-in, Angular.js, version of Tour Planner's embeddable tour maps. 
 
 Start a server:
+	
 	from root:
 	option 1: ruby -run -e httpd . -p 8000
 	option 2: python -m SimpleHTTPServer
@@ -14,6 +15,7 @@ Start a server:
 	
 
 To run tests:
+	
 	for jasmine unit tests:
 	open SpecRunner.html in a browser
 	
@@ -29,6 +31,7 @@ To run tests:
 	(you can install using: npm install -g protractor)
 
 To edit Sass:
+	
 	from root: 
 	sass --watch css/app.scss:css/app.css
 
