@@ -1,6 +1,7 @@
 // factory for grabbing, creating, and formatting show data
 tourMapper.factory('showFactory', function($http, $filter) {
-		var factory = {};
+	
+	var factory = {};
 	
 	// ajax call to SeatGeek API
 	factory.getShowsFromSeatGeek = function (bandName) {

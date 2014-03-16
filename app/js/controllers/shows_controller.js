@@ -56,6 +56,7 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter, showFactory)
 		});
 	};
 	
+	// generate embed code for $scope.shows
 	$scope.getEmbed = function () {
 		$body = angular.element( document.querySelector( 'body' ) );
 		$body.prepend( JSON.stringify($scope.shows) );

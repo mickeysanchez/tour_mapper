@@ -11,6 +11,16 @@ Start a server:
 	
 	in browser navigate to:
 	http://localhost:8000/app
+	
+
+To run tests:
+	start standalone selenium server:
+	webdriver-manager start (may need sudo)
+	(you can install using: webdriver-manager update --standalone)
+	
+	then from root:
+	protractor app/spec/test_config.js
+	(you can install using: npm install -g protractor)
 
 To edit Sass:
 	from root: 
