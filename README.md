@@ -33,5 +33,5 @@ To run tests:
 To edit Sass:
 	
 	from root: 
-	sass --watch css/app.scss:css/app.css
+	sass --watch app/css/app.scss:app/css/app.css
 

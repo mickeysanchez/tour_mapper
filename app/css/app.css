@@ -1,4 +1,4 @@
-html, body, main, header, button,
+html, body, main, header, button, textarea,
 div, span, section, ul, li, form,
 h1, h2, h3, h4, h5, h6, input, label {
   margin: 0;
@@ -141,6 +141,57 @@ header {
   #add-show-form input[type="submit"]:active {
     top: 2px;
     left: 2px; }
+
+.has-active-modal .modal {
+  display: block; }
+
+.modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.modal:before {
+  content: "";
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75); }
+
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 700px;
+  min-height: 200px;
+  padding: 30px;
+  margin-top: -300px;
+  margin-left: -350px;
+  background: #fff; }
+
+textarea {
+  width: 680px;
+  height: 300px;
+  padding: 10px;
+  border: 1px solid black;
+  resize: none; }
+
+.modal-close-button {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 10px;
+  font-size: 40px;
+  line-height: 1.0;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer; }
+
+.modal-close-button:hover {
+  color: #000; }
 
 body {
   font-family: "Montserrat", sans-serif; }
