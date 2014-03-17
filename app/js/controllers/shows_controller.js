@@ -2,17 +2,20 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter, showFactory)
 
 	$scope.shows = [];
 	
+	$scope.tester = function() {
+		return 5;
+	};
+	
 	// create Mapbox Map Object and load an empty map on page load
-	$scope.map = function() {
+	$scope.map = function () {
 		var map = L.mapbox.map('map', 'examples.map-9ijuk24y').setView([30, 10], 2);
 		map.scrollWheelZoom.disable();
-		
-		// instantiate MapBox featureLayer (markers)   
-		$scope.featureLayer = L.mapbox.featureLayer()
-		
-		return map;	 
+		return map;
 	}();
-			   		  	 
+	
+	// instantiate MapBox featureLayer (markers)   
+	$scope.featureLayer = $scope.map.featureLayer;
+	   		  	 
  	// grab shows from SeatGeek, populate shows and map.
 	$scope.grabShows = function() {
 		showFactory.getShowsFromSeatGeek($scope.bandName)
@@ -24,8 +27,6 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter, showFactory)
 			};
 			
 			if (confirmed) {
-				// clear out any existing shows
-				$scope.shows = []; 	
 				$scope.shows = showFactory.showObjectsFromGrab(data);
 			};
 		
