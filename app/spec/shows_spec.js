@@ -10,6 +10,7 @@ describe("Tour Mapper", function() {
 		}));
 		
 		afterEach(function () {
+			// do this or get a "map already initialized" error
 			$('#map').remove();
 		});
 		
