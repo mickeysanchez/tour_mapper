@@ -21,7 +21,54 @@ describe("Tour Mapper", function() {
 		it("should have map and featureLayer", function () {
 			expect($scope.map).toBeDefined();
 			expect($scope.featureLayer).toBeDefined();
-		});			
+		});
+		
+		it("should grabShows properly", inject(function ($httpBackend, $http) {
+			$httpBackend.when('GET', 'https://api.seatgeek.com/2/events?type=concert&q=Beyonce').respond(beyonceData);
+			
+			$scope.bandName = "Beyonce";
+			$scope.grabShows();
+			$httpBackend.flush();
+			
+			var resultString = JSON.stringify($scope.shows[0]);
+			expect(resultString).toBe(JSON.stringify(goodShowObject));
+			
+			expect($scope.shows[0]["ticket_url"]).toBe(goodShowObject["ticket_url"]);
+		}));
+		
+		it("should addMapMarkers", function () {
+			// how to check if methods are called on an object
+		});		
+		
+		it("should add show from form", inject(function ($httpBackend) {
+			var show = { venue: { name: "Mickey's" }, address: "1 Main St", city: "Brooklyn", state: "NY"};
+			
+			$httpBackend.when('GET', 'https://maps.googleapis.com/maps/api/geocode/json?address=1 Main St,Brooklyn,NY&sensor=false').respond(googleLocationData);
+			
+			$scope.addShow(show);
+			$httpBackend.flush();
+			
+			expect($scope.shows.length).toBe(1);
+			expect($scope.shows[0]["geometry"]["coordinates"][0]).toBe(-122.08542120);
+			expect($scope.shows[0]["geometry"]["coordinates"][1]).toBe(37.42291810);
+			expect($scope.shows[0].venue.name).toBe("Mickey's")
+
+			var show2 = { venue: { name: "Mickey's 2" }, address: "1 Main St", city: "Brooklyn", state: "NY"};
+			$scope.addShow(show2);
+			$httpBackend.flush();
+			
+			expect($scope.shows.length).toBe(2);
+			expect($scope.shows[1].venue.name).toBe("Mickey's 2")
+		}));
+		
+		it("should create correct embed code", function() {
+			$scope.shows = [goodShowObject]
+			$('body').append("<textarea></textarea>");
+			
+			$scope.getEmbed();
+			expect($("textarea").html()).toBe(goodEmbed);
+			$("textarea").remove();
+		});
 	});
 	
 	describe("showFactory", function () {
@@ -34,7 +81,6 @@ describe("Tour Mapper", function() {
 			
 			$httpBackend.expectGET('https://api.seatgeek.com/2/events?type=concert&q=Beyonce');
 			showFactory.getShowsFromSeatGeek("Beyonce");
-			$httpBackend.flush();
 		}));
 	
 		it("should make proper show objects from grab", inject(function(showFactory) {
@@ -52,7 +98,6 @@ describe("Tour Mapper", function() {
 			
 			$httpBackend.expectGET('https://maps.googleapis.com/maps/api/geocode/json?address=1 Main St,Brooklyn,NY&sensor=false');
 			showFactory.createShowFromForm(show);
-			$httpBackend.flush();
 		}));
 	
 		it("should create proper show object from form data", inject(function(showFactory) {
