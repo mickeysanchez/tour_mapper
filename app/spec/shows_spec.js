@@ -66,7 +66,7 @@ describe("Tour Mapper", function() {
 			$('body').append("<textarea></textarea>");
 			
 			$scope.getEmbed();
-			expect($("textarea").html()).toBe(goodEmbed);
+			expect($("textarea").html()).toBe(goodEmbed.replace(/>/g, '&gt;').replace(/</g, '&lt;'));
 			$("textarea").remove();
 		});
 	});
