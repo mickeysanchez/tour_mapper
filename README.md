@@ -7,7 +7,7 @@ A single page, non-sign-in, Angular.js, version of Tour Planner's embeddable tou
 ####To view
 Start a server:
 	
-From root:
+From root directory: <br>
 Option 1: 
 	
 	ruby -run -e httpd . -p 8000
