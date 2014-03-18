@@ -2,7 +2,7 @@
 
 ##[Live](https://rawgithub.com/mickeysanchez/tour_mapper/master/app/index.html)
 
-Towards a single page, non-sign-in, Angular.js, version of Tour Planner's embeddable tour maps. 
+A single page, non-sign-in, Angular.js, version of Tour Planner's embeddable tour maps. 
 
 Start a server:
 	
@@ -34,4 +34,14 @@ To edit Sass:
 	
 	from root: 
 	sass --watch app/css/app.scss:app/css/app.css
+
+#Notes
+
+This app relies on three API's:
+
+1. SeatGeek
+2. Mapbox.js
+3. Google Coding
+
+Props to all of them.
 

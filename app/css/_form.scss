@@ -20,12 +20,11 @@
 		border: 1px solid black;
 		padding: 10px;
 		font-size: 14px;
-	}
-
-	input[type="text"]:hover,
-	input[type="date"]:hover {
-		border: 1px solid green;
-		box-shadow: 1px 1px 1px #888888;
+		
+		&:hover {
+		  border: 1px solid green;
+		  box-shadow: 1px 1px 1px #888888;	
+		}
 	}
 
 	input[type="submit"] {
@@ -39,15 +38,15 @@
 		-webkit-border-radius: 0;
 		box-shadow: 3px 3px 3px #888888;
 	    cursor: pointer;
-	}
-
-	input[type="submit"]:hover {
-		background: lightyellow;
-	}
-
-	input[type="submit"]:active {
-		top: 2px;
-		left: 2px;
+		
+		&:hover {
+		  background: lightyellow;
+		}
+		
+		&:active {
+		  top: 2px;
+		  left: 2px;	
+		}
 	}
 		
 }
