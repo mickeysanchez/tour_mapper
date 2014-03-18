@@ -19,7 +19,7 @@ To run tests:
 	for jasmine unit tests:
 	open SpecRunner.html in a browser
 	
-	for protractor tests:
+	for protractor integration tests (coming soon!):
 	make sure app server is running
 	
 	start standalone selenium server:
