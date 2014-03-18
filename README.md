@@ -4,35 +4,45 @@
 
 A single page, non-sign-in, Angular.js, version of Tour Planner's embeddable tour maps. 
 
+####To view
 Start a server:
 	
-	from root:
-	option 1: ruby -run -e httpd . -p 8000
-	option 2: python -m SimpleHTTPServer
+From root:
+Option 1: 
 	
-	in browser navigate to:
+	ruby -run -e httpd . -p 8000
+	
+Option 2: 
+
+	python -m SimpleHTTPServer
+
+In browser navigate to:
+
 	http://localhost:8000/app
 	
+####To run tests:
+	
+For jasmine unit tests jus open SpecRunner.html in a browser
+	
+for protractor integration tests (coming soon!):
 
-To run tests:
+1. make sure app server is running
 	
-	for jasmine unit tests:
-	open SpecRunner.html in a browser
+2. start standalone selenium server:
 	
-	for protractor integration tests (coming soon!):
-	make sure app server is running
+		webdriver-manager start (may need sudo)
+		(you can install using: webdriver-manager update --standalone)
 	
-	start standalone selenium server:
-	webdriver-manager start (may need sudo)
-	(you can install using: webdriver-manager update --standalone)
+3. then from root:
 	
-	then from root:
-	protractor app/spec/test_config.js
-	(you can install using: npm install -g protractor)
+		protractor app/spec/test_config.js
 
-To edit Sass:
+(you can install protractor using: npm install -g protractor)
+
+#### To edit Sass:
 	
-	from root: 
+from root: 
+	
 	sass --watch app/css/app.scss:app/css/app.css
 
 #Notes
