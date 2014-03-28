@@ -12,8 +12,19 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter, showFactory,
 		return map;
 	}();
 	
-	// instantiate MapBox featureLayer (markers)   
-	$scope.featureLayer = $scope.map.featureLayer;
+	// MapBox featureLayer (markers) - add shows if shows are in cookies
+	$scope.featureLayer = function() {
+		var featureLayer = $scope.map.featureLayer;
+		
+		if ($scope.shows.length > 0) {
+			featureLayer.setGeoJSON($scope.shows);
+			setTimeout(function () {
+				$scope.map.fitBounds(featureLayer.getBounds());
+			}, 200);
+		};
+
+		return featureLayer;
+	}();
 	   		  	 
  	// grab shows from SeatGeek, populate shows and map.
 	$scope.grabShows = function() {
@@ -30,8 +41,7 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter, showFactory,
 			};
 		
 			$scope.addMapMarkers();
-			
-			$cookieStore.put("shows", $scope.shows);
+			$scope.updateShowsCookie();
 		});
 	};
 	
@@ -63,6 +73,7 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter, showFactory,
 			$scope.addMapMarkers();
 			
 			$scope.show = null;
+			$scope.updateShowsCookie();
 		});
 	};
 	
@@ -77,9 +88,14 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter, showFactory,
 		$("body").removeClass("has-active-modal");
 	};
 	
+	// remove show from $scope.shows, update map and cookie
 	$scope.removeShow = function(idx) {
 	      $scope.shows.splice(idx, 1);
 		  $scope.addMapMarkers();
+		  $scope.updateShowsCookie();
 	};
- 
+	
+	$scope.updateShowsCookie = function() {
+		$cookieStore.put("shows", $scope.shows)
+	};
 });
