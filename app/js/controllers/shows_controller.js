@@ -32,8 +32,14 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter, showFactory)
 	
 	// creates and places markers for all shows in $scope.shows
 	$scope.addMapMarkers = function() {
-	    $scope.featureLayer.setGeoJSON($scope.shows)
-		$scope.map.fitBounds($scope.featureLayer.getBounds());
+		$scope.featureLayer.setGeoJSON($scope.shows)
+		
+		if ($scope.shows.length === 0) {
+			$scope.map.setView([30, 10], 2);
+		} else {
+			$scope.map.fitBounds($scope.featureLayer.getBounds());		
+		};
+		
 		$scope.featureLayer.addTo($scope.map);
 	};
 	
@@ -50,6 +56,8 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter, showFactory)
 			
 			$scope.shows.push(angular.copy(showObj));
 			$scope.addMapMarkers();
+			
+			$scope.show = null;
 		});
 	};
 	
@@ -62,6 +70,11 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter, showFactory)
 	// hide modal overlay when X is clicked
 	$scope.closeModal = function () {
 		$("body").removeClass("has-active-modal");
+	};
+	
+	$scope.removeShow = function(idx) {
+	      $scope.shows.splice(idx, 1);
+		  $scope.addMapMarkers();
 	};
  
 });

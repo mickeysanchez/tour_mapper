@@ -24,11 +24,15 @@
 		
 	    <ul>
 		   <li ng-repeat="show in shows | orderBy : 'datetime_local'">
-			   <a ng-href="{{ show.ticket_url }}">
+			   <a ng-href="{{ show.ticket_url }}" target="_blank">
 			       {{ show.datetime_local | date:'mediumDate' }} <br> 
 				   {{ show.venue.name }} - 
 				   {{ show["venue"]["display_location"]}}
 			   </a>
+			   <br>
+			   <form ng-submit="removeShow($index)">
+				   <input type="submit" value="Remove Show">
+			   </form>
 		   </li>
 	   </ul>
 	</section> 
@@ -43,7 +47,7 @@
 		
 		<form ng-submit="addShow(show)" novalidate>
 			<label for="show-date">Show Date:</label>
-			<input id="show-date" type="date" ng-model="show.datetime_local">
+			<input id="show-date" type="text" ng-model="show.datetime_local">
 			
 			<label for="show-ticket-url">Ticket URL:</label>
 			<input id="show-ticket-url" type="text" ng-model="show.ticket_url">
@@ -85,6 +89,13 @@
     </section>
 	
 </main> 
+
+<!-- Datepicker -->
+<script> 
+	$(function() {
+		$( "#show-date" ).datepicker();
+	});
+</script>
 
 </body> <!-- end ShowsCtrl -->
 

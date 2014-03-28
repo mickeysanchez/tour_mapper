@@ -7,7 +7,7 @@ tourMapper.factory('showFactory', function($http, $filter) {
 	factory.getShowsFromSeatGeek = function (bandName) {
 			return $http({ 
 				method: "GET", 
-				url: "https://api.seatgeek.com/2/events?type=concert&q=" + bandName 
+				url: "https://api.seatgeek.com/2/events?q=" + bandName 
 			});
 	};
 	
@@ -31,7 +31,7 @@ tourMapper.factory('showFactory', function($http, $filter) {
 				        },
 				        "properties": {
 					        "title": $filter('date')(show["datetime_local"]),
-				            "description": "<a href='" + show["url"] + "'> Tickets </a>",
+				            "description": "<a href='" + show["url"] + "' target='_blank'> Tickets </a>",
 				            "marker-size": "small",
 				            "marker-color": "#070"
 				        }
@@ -68,7 +68,7 @@ tourMapper.factory('showFactory', function($http, $filter) {
 	        },
 	        "properties": {
 		        "title": $filter('date')(show.datetime_local),
-	            "description": "<a href='" + show.ticket_url + "'> Tickets </a>",
+	            "description": "<a href='" + show.ticket_url + "' target='_blank'> Tickets </a>",
 	            "marker-size": "small",
 	            "marker-color": "#070"
 	        }

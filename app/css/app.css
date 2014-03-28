@@ -90,6 +90,18 @@ header {
   #shows li {
     padding: 10px 0;
     border-bottom: 1px solid black; }
+  #shows input[type=submit] {
+    position: relative;
+    padding: 0 10px;
+    border: 1px solid black;
+    font-size: 12px;
+    box-shadow: 3px 3px 3px #888888;
+    cursor: pointer; }
+  #shows input[type="submit"]:hover {
+    background: lightyellow; }
+  #shows input[type="submit"]:active {
+    top: 2px;
+    left: 2px; }
 
 #map-container {
   background: url("../img/spinner.gif") no-repeat center;
