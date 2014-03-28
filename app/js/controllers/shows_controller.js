@@ -1,6 +1,9 @@
-tourMapper.controller('ShowsCtrl', function($scope, $http, $filter, showFactory) {
+tourMapper.controller('ShowsCtrl', function($scope, $http, $filter, showFactory, $cookieStore) {
 
-	$scope.shows = [];
+	// load shows stored in cookies or set shows to empty array
+	$scope.shows = function() {
+		return ( $cookieStore.get("shows") || [] );
+	}();
 	
 	// create Mapbox Map Object and load an empty map on page load
 	$scope.map = function () {
@@ -27,6 +30,8 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter, showFactory)
 			};
 		
 			$scope.addMapMarkers();
+			
+			$cookieStore.put("shows", $scope.shows);
 		});
 	};
 	
