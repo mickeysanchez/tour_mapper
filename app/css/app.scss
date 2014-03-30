@@ -1,5 +1,5 @@
 $font: 'Montserrat', sans-serif;
-$content-width: 1500px;
+$content-width: 1150px;
 
 $red: #6b2607;
 
@@ -10,6 +10,7 @@ $red: #6b2607;
 @import 'map';
 @import 'form';
 @import 'modal';
+@import 'footer';
 
 body {
 	font-family: $font;
@@ -23,6 +24,10 @@ body {
 #container {
 	margin: auto;
 	width: $content-width;
+	height: 100%;
+	padding: 20px;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
 }
 
 #band-name-header {

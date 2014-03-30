@@ -37,12 +37,23 @@ a:active {
   display: block; }
 
 header {
-  width: 1500px;
-  margin: auto;
-  padding: 10px 0;
-  border-bottom: 1px solid black; }
+  min-width: 1000px;
+  padding: 10px 20px;
+  border-bottom: 1px solid black;
+  background: url("../img/header.jpg") no-repeat;
+  background-position: left-top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
   header span {
-    margin-left: 10px; }
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 25px;
+    cursor: pointer; }
+  header #get-embed-info {
+    margin-right: 10px;
+    float: right; }
   header form {
     display: inline; }
     header form label {
@@ -81,10 +92,10 @@ header {
     cursor: pointer; }
 
 #shows {
-  font-size: 14px;
+  font-size: 12px;
   float: left;
   padding: 0;
-  width: 350px; }
+  width: 200px; }
   #shows h2 {
     border-bottom: 1px solid black; }
   #shows li {
@@ -108,8 +119,8 @@ header {
   margin: 0 20px;
   float: left;
   border: 1px solid black;
-  width: 800px;
-  height: 600px; }
+  width: 600px;
+  height: 400px; }
 
 #map {
   width: 100%;
@@ -118,7 +129,7 @@ header {
 
 #add-show-form {
   width: 300px;
-  float: right; }
+  float: left; }
   #add-show-form h2 {
     margin-bottom: 10px;
     border-bottom: 1px solid black; }
@@ -200,6 +211,22 @@ header {
     border: 1px solid black;
     resize: none; }
 
+footer {
+  display: none;
+  border-top: 1px solid black;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: url("../img/header.jpg") no-repeat;
+  background-position: left-top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+  footer #about {
+    float: right; }
+
 body {
   font-family: "Montserrat", sans-serif; }
 
@@ -209,7 +236,11 @@ body {
 
 #container {
   margin: auto;
-  width: 1500px; }
+  width: 1150px;
+  height: 100%;
+  padding: 20px;
+  border-left: 1px solid black;
+  border-right: 1px solid black; }
 
 #band-name-header {
   height: 50px;

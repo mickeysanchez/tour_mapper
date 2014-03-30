@@ -1,0 +1,18 @@
+footer {
+	display: none;
+	border-top: 1px solid black;
+	padding: 10px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+    background:url('../img/header.jpg') no-repeat; 
+	background-position: left-top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	
+	#about {
+		float: right;
+	}
+}

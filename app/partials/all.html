@@ -8,12 +8,13 @@
 		<input type="submit" value="Grab Shows">
 	</form>
 		
-	<span>(Enter your band's name and click 'Grab Shows' to find existing shows.)</span>
+	<span id="grab-shows-info">?</span>
 	
 	<button ng-click="getEmbed()"> Get Embed </button>
+	<span id="get-embed-info">?</span>
 </header>
 	
-<main id="container">
+<main id="container" class="clear-after">
 		
 	<div id="band-name-header">
 		<h1>{{bandName}}</h1>
@@ -26,7 +27,7 @@
 		   <li ng-repeat="show in shows | orderBy : 'datetime_local'">
 			   <a ng-href="{{ show.ticket_url }}" target="_blank">
 			       {{ show.datetime_local | date:'mediumDate' }} <br> 
-				   {{ show.venue.name }} - 
+				   {{ show.venue.name }} <br>
 				   {{ show["venue"]["display_location"]}}
 			   </a>
 			   <br>
@@ -90,10 +91,33 @@
 	
 </main> 
 
+<footer class="clear-before">	
+	&copy; Tour Mapper
+	<!-- <span id="about">About</span> -->
+</footer>
+
 <!-- Datepicker -->
 <script> 
 	$(function() {
 		$( "#show-date" ).datepicker();
+	});
+	
+	$("#grab-shows-info").attr("title", function() {
+		return "Enter your band name and click 'Grab Shows' to populate previously announced shows via SeatGeek.";	
+	});
+	
+	$("#grab-shows-info").click(function () {
+		$(this).tooltip();
+		$(this).tooltip("open");
+	});
+	
+	$("#grab-shows-info").attr("title", function() {
+		return "Enter your band name and click 'Grab Shows' to populate previously announced shows via SeatGeek.";	
+	});
+	
+	$("#grab-shows-info").click(function () {
+		$(this).tooltip();
+		$(this).tooltip("open");
 	});
 </script>
 

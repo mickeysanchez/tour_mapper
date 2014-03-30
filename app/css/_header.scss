@@ -1,11 +1,24 @@
 header {
-	width: 1500px;
-	margin: auto;
-	padding: 10px 0;
+	min-width: 1000px;
+	padding: 10px 20px;
 	border-bottom: 1px solid black;
+    background:url('../img/header.jpg') no-repeat; 
+	background-position: left-top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 	
 	span {
 		margin-left: 10px;
+		font-weight: bold;
+		font-size: 25px;
+		cursor: pointer;
+	}
+	
+	#get-embed-info {
+		margin-right: 10px;
+		float: right;
 	}
 	
 	form {
