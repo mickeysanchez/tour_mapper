@@ -68,7 +68,7 @@ tourMapper.factory('showFactory', function($http, $filter) {
 	        },
 	        "properties": {
 		        "title": $filter('date')(show.datetime_local),
-	            "description": show.city + ", " + show.state + "<br>" + "<a href='" + show.ticket_url + "' target='_blank'> Tickets </a>",
+	            "description": show.city.charAt(0).toUpperCase() + show.city.slice(1) + ", " + show.state.toUpperCase() + "<br>" + "<a href='" + show.ticket_url + "' target='_blank'> Tickets </a>",
 	            "marker-size": "small",
 	            "marker-color": "#070"
 	        }
