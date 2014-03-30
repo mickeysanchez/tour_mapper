@@ -37,6 +37,10 @@
     background: #fff;
   }
   
+  input {
+	  border: 1px solid black;
+  }
+  
   .modal-close-button {
     position: absolute;
     display: block;
@@ -54,12 +58,14 @@
   }
   
   textarea {
+	margin-top: 10px;
     width: 680px;
     height: 300px;
     padding: 10px;
     border: 1px solid black;
     resize: none;
   }
+  
 }
 
 

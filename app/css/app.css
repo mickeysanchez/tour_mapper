@@ -64,6 +64,7 @@ header {
       margin-left: 10px; }
     header form input[type=text] {
       display: inline;
+      background: transparent;
       border-bottom: 1px solid black;
       text-align: center;
       font-size: 25px; }
@@ -138,14 +139,16 @@ header {
     margin: 2px;
     font-weight: bold; }
   #add-show-form input[type="text"],
-  #add-show-form input[type="date"] {
+  #add-show-form input[type="date"],
+  #add-show-form input[type="url"] {
     display: block;
     width: 279px;
     border: 1px solid black;
     padding: 10px;
     font-size: 14px; }
     #add-show-form input[type="text"]:hover,
-    #add-show-form input[type="date"]:hover {
+    #add-show-form input[type="date"]:hover,
+    #add-show-form input[type="url"]:hover {
       border: 1px solid green;
       box-shadow: 1px 1px 1px #888888; }
   #add-show-form input[type="submit"] {
@@ -192,6 +195,8 @@ header {
     margin-top: -300px;
     margin-left: -350px;
     background: #fff; }
+  .modal input {
+    border: 1px solid black; }
   .modal .modal-close-button {
     position: absolute;
     display: block;
@@ -205,6 +210,7 @@ header {
   .modal .modal-close-button:hover {
     color: #000; }
   .modal textarea {
+    margin-top: 10px;
     width: 680px;
     height: 300px;
     padding: 10px;
@@ -238,9 +244,7 @@ body {
   margin: auto;
   width: 1150px;
   height: 100%;
-  padding: 20px;
-  border-left: 1px solid black;
-  border-right: 1px solid black; }
+  padding: 20px; }
 
 #band-name-header {
   height: 50px;

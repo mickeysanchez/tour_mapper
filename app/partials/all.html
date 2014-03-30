@@ -48,10 +48,10 @@
 		
 		<form ng-submit="addShow(show)" novalidate>
 			<label for="show-date">Show Date:</label>
-			<input id="show-date" type="text" ng-model="show.datetime_local">
+			<input id="show-date" type="date" ng-model="show.datetime_local">
 			
 			<label for="show-ticket-url">Ticket URL:</label>
-			<input id="show-ticket-url" type="text" ng-model="show.ticket_url">
+			<input id="show-ticket-url" type="url" ng-model="show.ticket_url" required>
 			
 			<label for="show-venue-name">Venue Name:</label>
 			<input id="show-venue-name" type="text" ng-model="show.venue.name">
@@ -98,27 +98,28 @@
 
 <!-- Datepicker -->
 <script> 
-	$(function() {
-		$( "#show-date" ).datepicker();
-	});
-	
 	$("#grab-shows-info").attr("title", function() {
-		return "Enter your band name and click 'Grab Shows' to populate previously announced shows via SeatGeek.";	
+		return "Enter your band name and click 'Grab Shows' to add previously announced shows via SeatGeek.";	
 	});
 	
-	$("#grab-shows-info").click(function () {
+	$("#grab-shows-info").hover(function () {
 		$(this).tooltip();
 		$(this).tooltip("open");
 	});
 	
-	$("#grab-shows-info").attr("title", function() {
-		return "Enter your band name and click 'Grab Shows' to populate previously announced shows via SeatGeek.";	
+	$("#get-embed-info").attr("title", function() {
+		return "After you're done adding shows, click 'Get Embed' to get code for the map. You can copy and paste this code on your band's website wherever you want the map to show up.";	
 	});
 	
-	$("#grab-shows-info").click(function () {
+	$("#get-embed-info").hover(function () {
 		$(this).tooltip();
 		$(this).tooltip("open");
 	});
+	
+	if (!Modernizr.inputtypes.date) {
+	    $('input[type=date]').datepicker();
+	};
+	
 </script>
 
 </body> <!-- end ShowsCtrl -->

@@ -79,7 +79,7 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter, showFactory,
 	
 	// generate embed code for $scope.shows
 	$scope.getEmbed = function () {
-		$("textarea").html(showFactory.generateEmbed($scope.shows));
+		$("textarea").html(showFactory.generateEmbed($scope.shows, $scope.mapWidth));
 		$("body").addClass("has-active-modal");			
 	};
 	
