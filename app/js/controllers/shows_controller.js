@@ -50,7 +50,7 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter, showFactory,
 		$scope.featureLayer.setGeoJSON($scope.shows)
 		
 		if ($scope.shows.length === 0) {
-			$scope.map.setView([30, 10], 2);
+			$scope.map.setView([30, 10], 1);
 		} else {
 			$scope.map.fitBounds($scope.featureLayer.getBounds());		
 		};
