@@ -83,6 +83,11 @@
 
 		  <p>Copy and paste the following code onto your site wherever you want the map to show up.</p>
 
+		  <label>Height:</label>
+		  <input type="text" name="height" ng-init="mapHeight = 400" ng-model="mapHeight">
+		  <label>Width:</label>
+		  <input type="text" name="width" ng-init="mapWidth = 600" ng-model="mapWidth">
+
           <textarea>INJECT CODE</textarea>
 
         </div>
@@ -119,7 +124,6 @@
 	if (!Modernizr.inputtypes.date) {
 	    $('input[type=date]').datepicker();
 	};
-	
 </script>
 
 </body> <!-- end ShowsCtrl -->
