@@ -7,7 +7,7 @@ tourMapper.controller('ShowsCtrl', function($scope, $http, $filter, showFactory,
 	
 	// create Mapbox Map Object and load an empty map on page load
 	$scope.map = function () {
-		var map = L.mapbox.map('map', 'examples.map-9ijuk24y').setView([30, 10], 1);
+		var map = L.mapbox.map('map', 'examples.map-i86nkdio').setView([30, 10], 1);
 		map.scrollWheelZoom.disable();
 		return map;
 	}();
