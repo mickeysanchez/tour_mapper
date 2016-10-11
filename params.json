@@ -1,0 +1,6 @@
+{
+  "name": "Tour mapper",
+  "tagline": "Tour maps for bands.",
+  "body": "#Tour Mapper\r\n\r\n##[Live](https://rawgithub.com/mickeysanchez/tour_mapper/master/app/index.html)\r\n\r\nA single page, non-sign-in, Angular.js, version of Tour Planner's embeddable tour maps. \r\n\r\n####To view\r\nStart a server:\r\n\t\r\nFrom root directory: <br>\r\nOption 1: \r\n\t\r\n\truby -run -e httpd . -p 8000\r\n\t\r\nOption 2: \r\n\r\n\tpython -m SimpleHTTPServer\r\n\r\nIn browser navigate to:\r\n\r\n\thttp://localhost:8000/app\r\n\t\r\n####To run tests:\r\n\t\r\nFor jasmine unit tests jus open SpecRunner.html in a browser\r\n\t\r\nfor protractor integration tests (coming soon!):\r\n\r\n1. make sure app server is running\r\n\t\r\n2. start standalone selenium server:\r\n\t\r\n\t\twebdriver-manager start (may need sudo)\r\n\t\t(you can install using: webdriver-manager update --standalone)\r\n\t\r\n3. then from root:\r\n\t\r\n\t\tprotractor app/spec/test_config.js\r\n\r\n(you can install protractor using: npm install -g protractor)\r\n\r\n#### To edit Sass:\r\n\t\r\nfrom root: \r\n\t\r\n\tsass --watch app/css/app.scss:app/css/app.css\r\n\r\n#Notes\r\n\r\nThis app relies on three API's:\r\n\r\n1. SeatGeek\r\n2. Mapbox.js\r\n3. Google Coding\r\n\r\nProps to all of them.\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
